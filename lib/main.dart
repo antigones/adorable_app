@@ -76,10 +76,13 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Container(
               padding: EdgeInsets.all(0),
-              child: Image.network(
-                _imgUrl,
-              )),
-
+              child: CircleAvatar(
+                  radius: 128.0,
+                  backgroundImage: NetworkImage(
+                    _imgUrl,
+                  )
+              )
+          ),
           // This trailing comma makes auto-formatting nicer for build methods.
         ],
       )),
