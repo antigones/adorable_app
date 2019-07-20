@@ -2,9 +2,9 @@
 
 A Flutter application showing adorable avatars using "Adorable Avatars" 
 
-[API]: http://avatars.adorable.io/	"Adorable Avatars API"
+[API]: http://avatars.adorable.io/	"Adorable Avatars API."
 
-.
+![](img1.png)
 
 ## Getting Started
 
