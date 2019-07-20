@@ -1,5 +1,5 @@
-import 'package:adorable_app/avatar_widget.dart';
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() => runApp(MyApp());
 
@@ -45,7 +45,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  String _imgUrl = 'https://api.adorable.io/avatars/1/';
 
   void _incrementCounter() {
     setState(() {
@@ -54,7 +54,13 @@ class _MyHomePageState extends State<MyHomePage> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
+    });
+  }
+
+  String _updateImg() {
+    setState(() {
+      int n = new Random().nextInt(100);
+      _imgUrl = 'https://api.adorable.io/avatars/' + n.toString() + '/';
     });
   }
 
@@ -73,10 +79,25 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: AvatarWidget()
-      )
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+              padding: EdgeInsets.all(0),
+              child: Image.network(
+                _imgUrl,
+              )),
+
+          // This trailing comma makes auto-formatting nicer for build methods.
+        ],
+      )),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _updateImg,
+        tooltip: 'Update',
+        child: Icon(Icons.update),
+      ),
     );
   }
 }
