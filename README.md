@@ -1,10 +1,16 @@
-# adorable_app
+# Adorable app
 
-A new Flutter application.
+A Flutter application showing adorable avatars using "Adorable Avatars" 
+
+[API]: http://avatars.adorable.io/	"Adorable Avatars API"
+
+.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project show StatefulWidget setState() function usage.
+
+
 
 A few resources to get you started if this is your first Flutter project:
 
